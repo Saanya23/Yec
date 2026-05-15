@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Sol | Small Creations, Big Smiles</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(to bottom,#fffaf5,#fff0f3);
+color:#333;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(12px);
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.logo{
+font-size:2rem;
+font-weight:700;
+color:#ff5e78;
+}
+
+nav{
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+}
+
+nav a{
+text-decoration:none;
+color:#444;
+font-weight:600;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff5e78;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+color:white;
+}
+
+.hero-content{
+max-width:900px;
+animation:fade 2s ease;
+}
+
+.hero h1{
+font-size:4.5rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.3rem;
+line-height:2;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:16px 40px;
+background:linear-gradient(135deg,#ff5e78,#ff9966);
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-weight:700;
+transition:0.3s;
+box-shadow:0 10px 20px rgba(255,94,120,0.3);
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+section{
+padding:100px 10%;
+}
+
+.title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.title h2{
+font-size:3rem;
+color:#ff5e78;
+margin-bottom:10px;
+}
+
+.title p{
+color:#666;
+}
+
+.about-box{
+background:white;
+padding:50px;
+border-radius:35px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+text-align:center;
+line-height:2;
+font-size:1.15rem;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:35px;
+}
+
+.card{
+background:white;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 12px 30px rgba(0,0,0,0.1);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-12px);
+}
+
+.card img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.card-content{
+padding:25px;
+}
+
+.card h3{
+font-size:1.6rem;
+margin-bottom:10px;
+color:#ff5e78;
+}
+
+.price{
+font-size:1.7rem;
+font-weight:700;
+margin-top:15px;
+color:#3ba55d;
+}
+
+.badge{
+display:inline-block;
+background:#ffe2ea;
+color:#ff5e78;
+padding:8px 15px;
+border-radius:30px;
+font-size:0.9rem;
+margin-bottom:15px;
+font-weight:600;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.feature{
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.feature:hover{
+transform:scale(1.04);
+}
+
+.feature h3{
+margin:15px 0;
+color:#ff5e78;
+}
+
+.story{
+background:linear-gradient(135deg,#ffeff3,#fff8f0);
+border-radius:35px;
+padding:50px;
+text-align:center;
+line-height:2;
+font-size:1.1rem;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.order-box{
+background:white;
+padding:50px;
+border-radius:35px;
+max-width:800px;
+margin:auto;
+box-shadow:0 12px 30px rgba(0,0,0,0.1);
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+input,select,textarea{
+padding:18px;
+border-radius:15px;
+border:2px solid #eee;
+font-size:1rem;
+}
+
+textarea{
+height:130px;
+resize:none;
+}
+
+button{
+padding:18px;
+border:none;
+border-radius:50px;
+background:linear-gradient(135deg,#ff5e78,#ff9966);
+color:white;
+font-size:1rem;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-4px);
+}
+
+.team{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.member{
+background:white;
+padding:30px;
+border-radius:25px;
+text-align:center;
+font-weight:700;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:45px;
+margin-top:60px;
+}
+
+footer h2{
+margin-bottom:10px;
+}
+
+.note{
+margin-top:20px;
+background:#fff3cd;
+padding:15px;
+border-radius:15px;
+font-size:0.95rem;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.8rem;
+}
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo" style="display:flex;align-items:center;gap:12px;">
+<div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#ff5e78,#ff9966);display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem;box-shadow:0 5px 15px rgba(0,0,0,0.15);">
+✨
+</div>
+<div>
+<div style="font-size:2rem;font-weight:700;color:#ff5e78;line-height:1;">Studio Sol</div>
+<div style="font-size:0.8rem;color:#666;">Small Creations, Big Smiles</div>
+</div>
+</div>
+
+
+<nav>
+<a href="#about">About</a>
+<a href="#products">Magnets</a>
+<a href="#features">Features</a>
+<a href="#order">Order</a>
+<a href="#team">Team</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Small Creations, Big Smiles 💖</h1>
+
+<p>
+Handmade fridge magnets filled with creativity, warmth, and happiness.
+Every magnet is carefully made to spread smiles and turn simple moments
+into beautiful memories.
+</p>
+
+<a href="#order" class="btn">Order Your Magnet</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="title">
+<h2>About Studio Sol</h2>
+<p>Creative • Handmade • Heartwarming</p>
+</div>
+
+<div class="about-box">
+Studio Sol is a student-run handmade business that creates aesthetic fridge magnets
+using eco-friendly materials and creative ideas. Every magnet is designed with love,
+care, and imagination. Our goal is simple — making people smile through small
+creative products that feel personal and special.
+</div>
+
+</section>
+
+<section id="products">
+
+<div class="title">
+<h2>Magnet Collection</h2>
+<p>Affordable handmade designs for everyone</p>
+</div>
+
+<div class="products">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<div class="badge">Cute & Small</div>
+
+<h3>Mini Magnets</h3>
+
+<p>
+Small handmade magnets with colorful aesthetic designs perfect for decorations.
+</p>
+
+<div class="price">4 AED</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<div class="badge">Most Popular</div>
+
+<h3>Medium Magnets</h3>
+
+<p>
+Creative handmade magnets with stylish themes and beautiful finishing.
+</p>
+
+<div class="price">4 AED</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<div class="badge">Customizable</div>
+
+<h3>Custom Magnets</h3>
+
+<p>
+Personalized magnets with names, colors, and custom ideas.
+</p>
+
+<div class="price">4 AED</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="features">
+
+<div class="title">
+<h2>✨ Crazy Features ✨</h2>
+<p>Why everyone loves Studio Sol</p>
+</div>
+
+<div class="features">
+
+<div class="feature">
+<h3>🎨 Fully Custom Designs</h3>
+<p>Create magnets with your favorite colors, themes, and names.</p>
+</div>
+
+<div class="feature">
+<h3>♻ Eco-Friendly Materials</h3>
+<p>Made using recycled and sustainable materials.</p>
+</div>
+
+<div class="feature">
+<h3>💖 Handmade With Love</h3>
+<p>Every product is handmade carefully with attention to detail.</p>
+</div>
+
+<div class="feature">
+<h3>🎁 Perfect Gift Idea</h3>
+<p>Great for birthdays, decorations, school fairs, and memories.</p>
+</div>
+
+<div class="feature">
+<h3>🌟 Aesthetic Designs</h3>
+<p>Modern trendy designs loved by students and parents.</p>
+</div>
+
+<div class="feature">
+<h3>📩 Instant Order Notification</h3>
+<p>Orders get sent directly to the Studio Sol email team.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="title">
+<h2>Our Story</h2>
+<p>More than just magnets</p>
+</div>
+
+<div class="story">
+Studio Sol started with a simple idea:
+making small handmade creations that bring happiness to people.
+Every magnet we create carries creativity, teamwork, and care.
+We believe even small things can make someone smile.
+</div>
+
+</section>
+
+<section id="order">
+
+<div class="title">
+<h2>Place Your Order</h2>
+<p>Orders are sent directly to the Studio Sol team emails instantly.</p>
+</div>
+
+<div class="order-box">
+
+
+<form action="https://formsubmit.co/saanya23g@gmail.com" method="POST">
+
+<input type="hidden" name="_template" value="table">
+
+<input type="hidden" name="_next" value="https://formsubmit.co/thanks">
+
+<input type="hidden" name="_autoresponse" value="Thank you for ordering from Studio Sol! We received your order successfully.">
+
+
+
+<input type="hidden" name="_cc" value="kavyaasansare@gmail.com,raaya.pereira@gmail.com">
+
+<input type="hidden" name="_subject" value="New Studio Sol Magnet Order!">
+
+<input type="hidden" name="_captcha" value="false">
+
+<input type="text" name="Name" placeholder="Your Name" required>
+
+<input type="email" name="Email" placeholder="Your Email" required>
+
+<select name="Magnet Type" required>
+<option value="">Choose Magnet Type</option>
+<option>Mini Magnet - 4 AED</option>
+<option>Medium Magnet - 4 AED</option>
+<option>Custom Magnet - 4 AED</option>
+</select>
+
+<textarea name="Custom Details" placeholder="Describe your magnet idea..." required></textarea>
+
+<button type="submit">Submit Order 💌</button>
+
+</form>
+
+<div class="note">
+After the first order submission, FormSubmit may send a confirmation email to activate the form.
+Once activated, all future orders will automatically arrive in your emails. If you see “web server is down” while opening locally, upload the website online or open it with internet connection because the form uses FormSubmit online services.
+</div>
+
+</div>
+
+</section>
+
+<section id="team">
+
+<div class="title">
+<h2>Meet Our Team</h2>
+<p>The creative minds behind Studio Sol</p>
+</div>
+
+<div class="team">
+
+<div class="member">Saanya Gupta</div>
+<div class="member">Raaya Sharma Pereira</div>
+<div class="member">Kavyaa Sansare</div>
+<div class="member">Hanuma Akshaya Sansare</div>
+<div class="member">Sreedhruti</div>
+<div class="member">Archana Sansare</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>🌸 Studio Sol 🌸</h2>
+
+<p>Small Creations, Big Smiles 💖</p>
+
+<p style="margin-top:10px;">
+Handmade with creativity, teamwork, and love.
+</p>
+
+</footer>
+
+</body>
+</html>
